@@ -7,14 +7,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "Gemfile",
-			"settings":
-			{
-				"buffer_size": 762,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -27,6 +19,34 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"packa",
+				"Package Control: List Packages"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"dia",
+				"LSP: Toggle Diagnostics Panel"
+			],
+			[
+				"lsp:",
+				"LSP: Toggle Log Panel"
+			],
+			[
+				"lsp",
+				"LSP: Toggle Log Panel"
+			],
+			[
+				"lsp for",
+				"LSP: Format File"
+			],
+			[
+				"ter",
+				"Terminal: Open"
+			],
 			[
 				"color",
 				"UI: Select Color Scheme"
@@ -48,15 +68,7 @@
 				"LSP: Enable Language Server in Project"
 			],
 			[
-				"lsp for",
-				"LSP: Format File"
-			],
-			[
 				"l",
-				"LSP: Enable Language Server in Project"
-			],
-			[
-				"lsp",
 				"LSP: Enable Language Server in Project"
 			],
 			[
@@ -70,10 +82,6 @@
 			[
 				"lsp ena",
 				"LSP: Enable Language Server in Project"
-			],
-			[
-				"packa",
-				"Package Control: Install Package"
 			]
 		],
 		"width": 0.0
@@ -96,15 +104,17 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/thamiresfalbo/Repositórios/Bitbucket/rails-the-question",
-		"/Users/thamiresfalbo/Repositórios/Bitbucket/rails-the-question/app"
+		"/Users/thamiresfalbo/Repositórios/Bitbucket/rails-the-question"
 	],
 	"file_history":
 	[
 		"/Users/thamiresfalbo/Repositórios/Bitbucket/rails-the-question/config/routes.rb",
+		"/Users/thamiresfalbo/Repositórios/Bitbucket/rails-the-question/app/controllers/welcome_controller.rb",
+		"/Users/thamiresfalbo/Repositórios/Bitbucket/rails-the-question/app/views/layouts/application.html.erb",
+		"/Users/thamiresfalbo/Repositórios/Bitbucket/rails-the-question/Gemfile",
+		"/Users/thamiresfalbo/Repositórios/Bitbucket/rails-the-question/config/environment.rb",
 		"/Users/thamiresfalbo/Repositórios/Bitbucket/rails-the-question/config/application.rb",
 		"/Users/thamiresfalbo/Repositórios/Bitbucket/rails-the-question/app/assets/stylesheets/application.css",
-		"/Users/thamiresfalbo/Repositórios/Bitbucket/rails-the-question/Gemfile",
 		"/Users/thamiresfalbo/Repositórios/Bitbucket/rails-the-question/config.ru"
 	],
 	"find":
@@ -144,39 +154,6 @@
 		{
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "Gemfile",
-					"selected": true,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 762,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"lsp_uri": "file:///Users/thamiresfalbo/Reposito%CC%81rios/Bitbucket/rails-the-question/Gemfile",
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"stack_multiselect": false,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -225,7 +202,7 @@
 	},
 	"output.language servers":
 	{
-		"height": 0.0
+		"height": 120.0
 	},
 	"pinned_build_system": "",
 	"project": "rails-the-question.sublime-project",
@@ -241,16 +218,28 @@
 		"selected_items":
 		[
 			[
+				"contr",
+				"app/controllers/welcome_controller.rb"
+			],
+			[
+				"erb",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"rou",
+				"config/routes.rb"
+			],
+			[
+				"rout",
+				"config/routes.rb"
+			],
+			[
 				"appl",
 				"config/application.rb"
 			],
 			[
 				"applicati",
 				"app/assets/stylesheets/application.css"
-			],
-			[
-				"rout",
-				"config/routes.rb"
 			],
 			[
 				"con",
