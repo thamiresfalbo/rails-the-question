@@ -4,9 +4,9 @@ pt-BR:
       admin:
         one: "Administrador"
         other: "Administradores"
-      profile:
-        one: "Perfil"
-        others: "Perfis"
+      user:
+        one: "Usuário"
+        others: "Usuário"
     attributes:
       admin:
         id: "Código ID"
