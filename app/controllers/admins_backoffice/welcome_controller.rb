@@ -1,4 +1,3 @@
-class AdminsBackoffice::WelcomeController < ApplicationController
-  def index
-  end
+class AdminsBackoffice::WelcomeController < AdminsBackofficeController
+  def index; end
 end
