@@ -35,3 +35,5 @@ group :test do
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+
+gem "tty-spinner", "~> 0.9.3"
