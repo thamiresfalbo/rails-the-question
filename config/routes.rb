@@ -15,6 +15,6 @@ Rails.application.routes.draw do
   end
 
   get 'inicio', to: 'site/welcome#index'
-
   root 'site/welcome#index'
+
 end

@@ -1,5 +1,5 @@
 namespace :dev do
-  DEFAULT_PASSWORD = 123_456
+  DEFAULT_PASSWORD = "123456"
 
   desc 'Configura o ambiente.'
   task setup: :environment do
