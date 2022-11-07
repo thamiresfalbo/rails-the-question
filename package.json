@@ -1,5 +1,14 @@
 {
   "name": "rails-the-question",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "5.2.2",
+    "jquery": "^3.6.1"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/thamiresfalbo/rails-the-question.git",
+  "author": "Thamires Falbo <111710331+thamiresfalbo@users.noreply.github.com>",
+  "license": "MIT"
 }
