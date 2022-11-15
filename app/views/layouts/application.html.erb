@@ -1,17 +1,3 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Rails The Question</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag "application" %>
-    <%= javascript_include_tag "application" %>
-
-  </head>
-  <body>
-    <main>
+<%= render 'shared/header' %>
       <%= yield %>
-    </main>
-  </body>
-</html>
+<%= render 'shared/footer' %>
