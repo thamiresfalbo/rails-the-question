@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
-</head>
-<body>
-	<h1>LAYOUT SITE</h1>
-	<%= yield %>
-</body>
+  <head>
+    <title>Rails The Question</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application" %>
+
+  </head>
+  <body>
+    <main>
+    <h1>SITE</h1>
+      <%= yield %>
+    </main>
+  </body>
 </html>

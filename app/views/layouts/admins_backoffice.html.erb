@@ -1,4 +1,18 @@
-<% render 'application' do %>
-    <h1>LAYOUT ADMINS BACKOFFICE</h1>
-    <%= yield %>
-<% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rails The Question</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application" %>
+
+  </head>
+  <body>
+    <main>
+    <h1>ADMINS BACKOFFICE</h1>
+      <%= yield %>
+    </main>
+  </body>
+</html>
