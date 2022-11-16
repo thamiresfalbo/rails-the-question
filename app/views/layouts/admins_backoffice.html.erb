@@ -2,13 +2,13 @@
 <div class="container">
   <div class="columns">
     <div class="column col-3">
-      <ul class="menu">
-      <li class="divider" data-content="PAINEL"></li>
-        <%= link_to admins_backoffice_welcome_index_path  do %>
-          <li class="menu-item">Dashboard</li>
+      <ul style="list-style-type:none">
+        <li class="divider" data-content="PAINEL"></li>
+        <%= link_to admins_backoffice_welcome_index_path do %>
+          <li>Dashboard</li>
         <% end %>
-        <%= link_to admins_backoffice_admins_index_path do %>
-          <li class="menu-item">Admins</li>
+        <%= link_to admins_backoffice_admins_path do %>
+          <li>Admins</li>
         <% end %>
       </ul>
     </div>
