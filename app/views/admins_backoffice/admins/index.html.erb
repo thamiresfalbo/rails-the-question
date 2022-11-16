@@ -1,0 +1,26 @@
+<h2>Administradores</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="active">
+      <% @admins.each do |admin| %>
+        <td><%= admin.id %></td>
+        <td><%= admin.email %></td>
+        <td style="width:100px;">
+          <button class="btn btn-action s-circle btn-success">
+            <i class="icon icon-edit"></i>
+          </button>
+          <button class="btn btn-action s-circle btn-error">
+          <i class="icon icon-delete"></i>
+        </button>
+      </td>
+    <% end %>
+  </tr>
+</tbody>
+</table>
