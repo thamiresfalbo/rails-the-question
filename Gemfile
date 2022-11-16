@@ -14,6 +14,7 @@ gem 'rails', '~> 5.2.8', '>= 5.2.8.1'
 gem 'rails-i18n', '~> 5.1'
 gem 'sass-rails', '~> 5.0'
 gem 'sqlite3'
+gem 'tty-spinner', '~> 0.9.3'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
@@ -38,5 +39,3 @@ group :test do
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-
-gem 'tty-spinner', '~> 0.9.3'
