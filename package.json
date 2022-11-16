@@ -2,7 +2,8 @@
   "name": "rails-the-question",
   "private": true,
   "dependencies": {
-    "spectre.css": "^0.5.9"
+    "spectre.css": "^0.5.9",
+    "tachyons-sass": "^4.9.5"
   },
   "version": "1.0.0",
   "main": "index.js",

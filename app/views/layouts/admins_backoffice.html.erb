@@ -1,18 +1,17 @@
 <%= render 'shared/header' %>
-<div class="container">
-  <div class="columns">
-    <div class="column col-3">
-      <ul style="list-style-type:none">
-        <li class="divider" data-content="PAINEL"></li>
-        <%= link_to admins_backoffice_welcome_index_path do %>
+  <div class="flex">
+    <div class="fl w-third">
+      <ul class="list">
+      <li class="b">Painel</li>
+        <%= link_to admins_backoffice_welcome_index_path, class: "link dim blue" do %>
           <li>Dashboard</li>
         <% end %>
-        <%= link_to admins_backoffice_admins_path do %>
+        <%= link_to admins_backoffice_admins_path, class: "link dim blue" do %>
           <li>Admins</li>
         <% end %>
       </ul>
     </div>
-    <div class="column col-9">
+    <div class="fl w-two-thirds ph3">
       <%= yield %>
     </div>
   </div>

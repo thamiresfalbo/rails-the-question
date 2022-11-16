@@ -1,17 +1,15 @@
-<nav class="navbar py-2 px-1">
-  <section class="navbar-section">
-    <%= link_to 'The Question', root_path, class: "navbar-brand" %>
-  </section>
-  <section class="navbar-section">
+<nav class="flex justify-between bg-lightest-blue items-center black pa3">
+  <%= link_to 'The Question', root_path, class: "f4 flex link black b" %>
+  <section class="flex flex-grow">
     <% if user_signed_in? %>
-      <%= link_to 'Dashboard', users_backoffice_welcome_index_path %>
-      <%= link_to 'Logout',  destroy_user_session_path, class: "btn btn-link", method: :delete %>
+      <%= link_to 'Dashboard', users_backoffice_welcome_index_path, class: "f6 link black mr2 dim" %>
+      <%= link_to 'Logout',  destroy_user_session_path, class: "f6 link black mr2 dim", method: :delete %>
     <% elsif admin_signed_in? %>
-      <%= link_to 'Dashboard', admins_backoffice_welcome_index_path %>
-      <%= link_to 'Logout',  destroy_admin_session_path, class: "btn btn-link", method: :delete %>
+      <%= link_to 'Dashboard', admins_backoffice_welcome_index_path, class: "f6 link black mr2 dim" %>
+      <%= link_to 'Logout',  destroy_admin_session_path, class: "f6 link black mr2 dim", method: :delete %>
     <% else %>
-      <%= link_to 'Login', new_user_session_path, class: "btn btn-link" %>
-      <%= link_to 'Admin', new_admin_session_path, class: "btn btn-link" %>
+      <%= link_to 'Login', new_user_session_path, class: "f6 link black mr2 dim" %>
+      <%= link_to 'Admin', new_admin_session_path, class: "f6 link black mr2 dim" %>
     <% end %>
   </section>
 </nav>
