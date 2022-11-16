@@ -1,5 +1,16 @@
-<%= render 'shared/header' %>
-    <h1>USERS BACKOFFICE</h1>
-      <%= yield %>
+<%= render 'shared/header'%>
+  <div class="columns">
+    <div class="column col-3">
+      <ul class="nav">
+        <li class="divider text-center" data-content="PAINEL"></li>
+        <%= link_to users_backoffice_welcome_index_path do %>
+          <li class="nav-item">Início</li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="columns col-9 px-2">
+        <%= yield %>
+      </div>
+  </div>
 <%= render 'shared/footer' %>
 

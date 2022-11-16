@@ -1,19 +1,18 @@
-<%= render 'shared/header' %>
-  <div class="flex">
-    <div class="fl w-third">
-      <ul class="list">
-      <li class="b">Painel</li>
-        <%= link_to admins_backoffice_welcome_index_path, class: "link dim blue" do %>
-          <li>Dashboard</li>
+<%= render 'shared/header'%>
+  <div class="columns">
+    <div class="column col-3">
+      <ul class="nav">
+        <li class="divider text-center" data-content="PAINEL"></li>
+        <%= link_to admins_backoffice_welcome_index_path do %>
+          <li class="nav-item">Início</li>
         <% end %>
-        <%= link_to admins_backoffice_admins_path, class: "link dim blue" do %>
-          <li>Admins</li>
+        <%= link_to admins_backoffice_admins_path do %>
+          <li class="nav-item">Administradores</li>
         <% end %>
       </ul>
     </div>
-    <div class="fl w-two-thirds ph3">
-      <%= yield %>
-    </div>
+    <div class="columns col-9 px-2">
+        <%= yield %>
+      </div>
   </div>
-</div>
 <%= render 'shared/footer' %>

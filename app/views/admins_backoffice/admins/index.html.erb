@@ -1,20 +1,24 @@
 <h2>Administradores</h2>
-<table class="w-100 collapse ba br4 b--black-05">
+<table class="table">
   <thea d>
-    <tr class="striped--near-white tl">
-      <th class="pv1 ph2 mid-gray">#</th>
-      <th class="pv1 ph2 mid-gray">Email</th>
-      <th class="pv1 ph2"></th>
+    <tr>
+      <th>#</th>
+      <th>Email</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <% @admins.each do |admin| %>
-        <td class="pv1 ph2 mid-gray"><%= admin.id %></td>
-        <td class="pv1 ph2 mid-gray"><%= admin.email %></td>
-        <td class="tr pr3">
-          <%= link_to "Editar", edit_admins_backoffice_admin_path(admin), class:"link dim blue" %>
-          Excluir
+        <td><%= admin.id %></td>
+        <td><%= admin.email %></td>
+        <td style="width:100px">
+          <%= link_to edit_admins_backoffice_admin_path(admin), class: "btn btn-success s-circle" do %>
+            <i class="icon icon-edit"></i>
+          <% end %>
+          <%= link_to edit_admins_backoffice_admin_path(admin), class: "btn btn-error s-circle" do %>
+            <i class="icon icon-delete"></i>
+          <% end %>
         </td>
 
       <% end %>
