@@ -1,2 +1,15 @@
-<h2>Editar</h2>
+<h1 class="center">Editar</h1>
+<div class="col-4">
+    <%= form_with model: [:admins_backoffice, @admin], local:true  do |f| %>
+      <%= f.label :email, class: "form-label" %>
+      <%= f.text_field :email, class: "form-input" %><br>
 
+      <%= f.label :password, class: "form-label" %>
+      <%= f.text_field :password, class: "form-input" %><br>
+
+      <%= f.label :confirm_password, class: "form-label" %>
+      <%= f.text_field :confirm_password, class: "form-input" %><br>
+
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% end %>
+</div>

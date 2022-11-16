@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   namespace :admins_backoffice do
     resources :welcome, only: [:index]
-    resources :admins, only: [:index, :edit]
+    resources :admins, only: [:index, :edit, :update]
   end
 
   get 'inicio', to: 'site/welcome#index'
