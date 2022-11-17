@@ -1,8 +1,10 @@
 <h1 class="center">Editar</h1>
 <% if @admin.errors.any? %>
-  <% @admin.errors.full_messages.each do |message| %>
-    <h3><%= message %></h3>
+  <div class="toast toast-warning">
+  <% @admin.errors.full_messages.each do |message| %>    
+    <p><%= message %></p>
   <% end %>
+  </div>
 <% end %>
 
 <div class="col-4">

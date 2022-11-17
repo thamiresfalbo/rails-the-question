@@ -1,20 +1,25 @@
 <%= render 'shared/header'%>
-  <div class="columns">
-    <div class="column col-3">
-      <ul class="nav">
-        <li class="divider text-center" data-content="PAINEL"></li>
-        <%= link_to admins_backoffice_welcome_index_path do %>
-          <li class="nav-item">Início</li>
-        <% end %>
-        <%= link_to admins_backoffice_admins_path do %>
-          <li class="nav-item">Administradores</li>
-        <% end %>
-        <li>Usuários</li>
-        <li>Questões</li>
-      </ul>
-    </div>
-    <div class="column">
-        <%= yield %>
+<div class="columns">
+  <div class="column col-3">
+    <ul class="nav">
+      <li class="divider text-center" data-content="PAINEL"></li>
+      <%= link_to admins_backoffice_welcome_index_path do %>
+        <li class="nav-item">Início</li>
+      <% end %>
+      <%= link_to admins_backoffice_admins_path do %>
+        <li class="nav-item">Administradores</li>
+      <% end %>
+      <li>Usuários</li>
+      <li>Questões</li>
+    </ul>
+  </div>
+  <div class="column">
+    <% flash.each do |type, message| %>
+      <div id="notice" class="toast toast-primary">
+        <%= message %>
       </div>
-  </div> 
+    <% end %>
+    <%= yield %>
+  </div>
+</div>
 <%= render 'shared/footer' %>
