@@ -88,6 +88,8 @@ GEM
     e2mmap (0.1.0)
     erubi (1.11.0)
     execjs (2.8.1)
+    faker (3.0.0)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -104,6 +106,7 @@ GEM
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
+    language_server-protocol (3.17.0.1)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -128,6 +131,7 @@ GEM
     parallel (1.22.1)
     parser (3.1.2.1)
       ast (~> 2.4.1)
+    prettier_print (1.1.0)
     public_suffix (5.0.0)
     puma (3.12.6)
     racc (1.6.0)
@@ -185,6 +189,10 @@ GEM
       unicode-display_width (>= 1.4.0, < 3.0)
     rubocop-ast (1.23.0)
       parser (>= 3.1.1.0)
+    ruby-lsp (0.3.6)
+      language_server-protocol (~> 3.17.0)
+      sorbet-runtime
+      syntax_tree (>= 4.0.2, < 5.0.0)
     ruby-progressbar (1.11.0)
     ruby_dep (1.5.0)
     rubyzip (2.3.2)
@@ -219,6 +227,7 @@ GEM
       thor (~> 1.0)
       tilt (~> 2.0)
       yard (~> 0.9, >= 0.9.24)
+    sorbet-runtime (0.5.10559)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -232,6 +241,8 @@ GEM
       sprockets (>= 3.0.0)
     sqlite3 (1.5.3)
       mini_portile2 (~> 2.8.0)
+    syntax_tree (4.3.0)
+      prettier_print (>= 1.0.2)
     thor (1.2.1)
     thread_safe (0.3.6)
     tilt (2.0.11)
@@ -273,6 +284,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise (~> 4.8)
+  faker
   htmlbeautifier
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
@@ -280,6 +292,7 @@ DEPENDENCIES
   rails (~> 5.2.8, >= 5.2.8.1)
   rails-i18n (~> 5.1)
   rubocop
+  ruby-lsp (~> 0.3.6)
   sass-rails (~> 5.0)
   selenium-webdriver
   solargraph

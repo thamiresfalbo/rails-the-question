@@ -1,5 +1,5 @@
 namespace :dev do
-  DEFAULT_PASSWORD = "123456"
+  DEFAULT_PASSWORD = '123456'
 
   desc 'Configura o ambiente.'
   task setup: :environment do
@@ -8,6 +8,7 @@ namespace :dev do
       show_spinner('Criando BD...') { `rails db:create` }
       show_spinner('Migrando...') { `rails db:migrate` }
       show_spinner('Criando o administrador...') { `rails dev:add_default_admin` }
+      show_spinner('Criando mais administradores...') { `rails dev:add_more_admins` }
       show_spinner('Criando o usuário...') { `rails dev:add_default_user` }
     else
       puts 'Não está em ambiente de desenvolvimento!'
@@ -30,6 +31,17 @@ namespace :dev do
       password: DEFAULT_PASSWORD,
       password_confirmation: DEFAULT_PASSWORD
     )
+  end
+
+  desc 'Adiciona mais admistradores'
+  task add_more_admins: :environment do
+    10.times do
+      Admin.create!(
+        email: Faker::Internet.email,
+        password: DEFAULT_PASSWORD,
+        password_confirmation: DEFAULT_PASSWORD
+      )
+    end
   end
 
   private

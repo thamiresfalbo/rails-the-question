@@ -8,14 +8,17 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
   end
 
   def update
-    @admin = Admin.find(params[:id])
-      if @admin.update_attributes(params[:admin])
-        flash[:success] = "Object was successfully updated"
-        redirect_to @admin
-      else
-        flash[:error] = "Something went wrong"
-        render 'edit'
-      end
+    admin = Admin.find(params[:id])
+    if admin.update(admin_parms)
+      redirect_to admins_backoffice_admins_index_path, notice: 'Admin was successfully updated'
+    else
+      render :edit, alert: 'Something went wrong'
+    end
   end
 
+  private
+
+  def admin_parms
+    params.require(:admin).permit(:email, :password, :password_confirmation)
+  end
 end

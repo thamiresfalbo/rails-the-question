@@ -20,6 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'faker'
   gem 'htmlbeautifier'
   gem 'rubocop'
   gem 'solargraph'
@@ -39,3 +40,5 @@ group :test do
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+
+gem 'ruby-lsp', '~> 0.3.6', group: :development

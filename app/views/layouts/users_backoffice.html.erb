@@ -1,15 +1,17 @@
 <%= render 'shared/header'%>
-  <div class="columns">
-    <div class="column col-3">
-      <ul class="nav">
-        <li class="divider text-center" data-content="PAINEL"></li>
-        <%= link_to users_backoffice_welcome_index_path do %>
-          <li class="nav-item">Início</li>
-        <% end %>
-      </ul>
-    </div>
-    <div class="columns col-9 px-2">
-        <%= yield %>
-      </div>
+<div class="columns">
+  <div class="column col-3">
+    <ul class="nav">
+      <li class="divider text-center" data-content="PAINEL"></li>
+      <%= link_to users_backoffice_welcome_index_path do %>
+        <li class="nav-item">Início</li>
+      <% end %>
+    </ul>
   </div>
+  <div class="columns col-9 px-2">
+    <div id="notice", class="toast toast-success"><%= flash[:notice] %></div>
+    <div id="alert", class="toast toast-success"><%= flash[:alert] %></div>
+    <%= yield %>
+  </div>
+</div>
 <%= render 'shared/footer' %>
