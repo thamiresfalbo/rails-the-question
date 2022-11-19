@@ -9,16 +9,12 @@
       <%= link_to admins_backoffice_admins_path do %>
         <li class="nav-item">Administradores</li>
       <% end %>
-      <li>Usuários</li>
-      <li>Questões</li>
+      <li class="nav-item disabled">Usuários</li>
+      <li class="nav-item disabled">Questões</li>
     </ul>
   </div>
   <div class="column">
-    <% flash.each do |type, message| %>
-      <div id="notice" class="toast toast-primary">
-        <%= message %>
-      </div>
-    <% end %>
+      <%= render 'shared/notifications' %>
     <%= yield %>
   </div>
 </div>
