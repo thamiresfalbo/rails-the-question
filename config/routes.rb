@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :admins, skip: [:registrations]
   devise_for :users
-
+  
   namespace :admins_backoffice do
     get 'admins/index'
   end
