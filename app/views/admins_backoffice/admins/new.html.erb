@@ -1,9 +1,11 @@
 <h1 class="center">Novo Administrador</h1>
 
 <% if @admin.errors.any? %>
+  <div class="toast toast-error">
   <% @admin.errors.full_messages.each do |message| %>
-    <p class="text-error"><%= message %></p>
+    <p><%= message %></p>
   <% end %>
+  </div>
 <% end %>
 
 <div class="col-4">

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :dev do
   DEFAULT_PASSWORD = '123456'
 
