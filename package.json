@@ -2,6 +2,7 @@
   "name": "rails-the-question",
   "private": true,
   "dependencies": {
+    "jquery": "^3.6.1",
     "spectre.css": "^0.5.9",
     "tachyons-sass": "^4.9.5"
   },

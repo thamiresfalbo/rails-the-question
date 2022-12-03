@@ -15,9 +15,13 @@ pt-BR:
         updated_at: "Atualizado em"
         password: "Senha"
         confirm_password: "Confirmação de Senha"
+        password_confirmation: "Confirmar Senha"
       user:
         id: "Código ID"
         email: "E-mail"
         created_at: "Criado em"
         updated_at: "Atualizado em"
+        password: "Senha"
+        confirm_password: "Confirmação de Senha"
+        password_confirmation: "Confirmar Senha"
 

@@ -2,7 +2,6 @@
   <section class="navbar-section">
   <%= link_to 'The Question', root_path, class: "navbar-brand" %>
   </section>
-
   <section class="navbar-section">
     <% if user_signed_in? %>
       <%= link_to 'Painel', users_backoffice_welcome_index_path, class: "btn btn-link" %>

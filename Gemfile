@@ -20,7 +20,10 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'erb_lint', '~> 0.1.3'
   gem 'faker'
+  gem 'rubocop'
+  gem 'solargraph'
 end
 
 group :development do
@@ -37,4 +40,3 @@ group :test do
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-gem "erb_lint", "~> 0.1.3"
