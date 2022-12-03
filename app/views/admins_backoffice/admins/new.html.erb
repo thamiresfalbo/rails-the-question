@@ -1,0 +1,26 @@
+<h1 class="center">Novo Administrador</h1>
+<% if @admin.errors.any? %>
+  <div class="toast toast-warning">
+  <% @admin.errors.full_messages.each do |message| %>    
+    <p><%= message %></p>
+  <% end %>
+  </div>
+<% end %>
+
+<div class="col-4">
+  <%= form_with model: [:admins_backoffice, @admin], local:true  do |f| %>
+    <div class="form-group">
+      <%= f.label :email, class: "form-label" %>
+      <%= f.text_field :email, class: "form-input" %><br>
+    </div>
+    <div class="form-group">
+      <%= f.label :password, class: "form-label" %>
+      <%= f.password_field :password, class: "form-input" %><br>
+    </div>
+    <div class="form-group">
+      <%= f.label :password_confirmation, class: "form-label" %>
+      <%= f.password_field :password_confirmation, class: "form-input" %><br>
+    </div>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
+</div>

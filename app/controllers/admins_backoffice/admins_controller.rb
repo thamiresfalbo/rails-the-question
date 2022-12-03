@@ -6,13 +6,26 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
     @admins = Admin.all
   end
 
+  def new
+    @admin = Admin.new
+  end
+
+  def create
+    @admin = Admin.new(admin_params)
+    if @admin.save
+      redirect_to admins_backoffice_admins_index_path, notice: 'Administrador foi criado com sucesso.'
+    else
+      render :new, notice: 'Algo deu errado.'
+    end
+  end
+
   def edit; end
 
   def update
     if @admin.update(admin_params)
-      redirect_to admins_backoffice_admins_index_path, notice: 'Admin was successfully updated'
+      redirect_to admins_backoffice_admins_index_path, notice: 'Administrador foi atualizado com sucesso.'
     else
-      render :edit, notice: 'Something went wrong'
+      render :edit, notice: 'Algo deu errado.'
     end
   end
 

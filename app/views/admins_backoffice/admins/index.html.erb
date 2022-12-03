@@ -4,7 +4,10 @@
     <tr>
       <th>#</th>
       <th>Email</th>
-      <th></th>
+      <th><%= link_to new_admins_backoffice_admin_path , class: "btn btn-success s-circle" do %>
+          <i class="icon icon-plus"></i>
+      <% end %>
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -13,7 +16,7 @@
         <td><%= admin.id %></td>
         <td><%= admin.email %></td>
         <td style="width: 100px">
-          <%= link_to edit_admins_backoffice_admin_path(admin), class: "btn btn-success s-circle" do %>
+          <%= link_to edit_admins_backoffice_admin_path(admin), class: "btn btn-primary  s-circle" do %>
             <i class="icon icon-edit"></i>
           <% end %>
           <%= link_to root_path, class: "btn btn-error disabled s-circle" do %>
