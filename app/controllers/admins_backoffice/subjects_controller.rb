@@ -1,5 +1,4 @@
 class AdminsBackoffice::SubjectsController < AdminsBackofficeController
-  before_action :verify_password, only: [:update]
   before_action :set_subject, only: %i[edit update destroy]
 
   def index
@@ -48,4 +47,3 @@ class AdminsBackoffice::SubjectsController < AdminsBackofficeController
   end
 end
 
-end
