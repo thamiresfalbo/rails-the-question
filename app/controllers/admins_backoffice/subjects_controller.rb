@@ -2,7 +2,7 @@ class AdminsBackoffice::SubjectsController < AdminsBackofficeController
   before_action :set_subject, only: %i[edit update destroy]
 
   def index
-    @subjects = Subject.all.page(params[:page])
+    @subjects = Subject.all.order(:description).page(params[:page])
   end
 
   def new
@@ -12,7 +12,7 @@ class AdminsBackoffice::SubjectsController < AdminsBackofficeController
   def create
     @subject = Subject.new(subject_params)
     if @subject.save
-      redirect_to admins_backoffice_subject_index_path, notice: 'Assunto foi criado com sucesso.'
+      redirect_to admins_backoffice_subjects_path, notice: 'Assunto foi criado com sucesso.'
     else
       render :new, notice: 'Algo deu errado.'
     end
@@ -22,7 +22,7 @@ class AdminsBackoffice::SubjectsController < AdminsBackofficeController
 
   def update
     if @subject.update(subject_params)
-      redirect_to admins_backoffice_subject_index_path, notice: 'Assunto foi atualizado com sucesso.'
+      redirect_to admins_backoffice_subjects_path, notice: 'Assunto foi atualizado com sucesso.'
     else
       render :edit, notice: 'Algo deu errado.'
     end
@@ -30,7 +30,7 @@ class AdminsBackoffice::SubjectsController < AdminsBackofficeController
 
   def destroy
     if @subject.destroy
-      redirect_to admins_backoffice_subject_index_path, notice: "Assunto excluído com sucesso."
+      redirect_to admins_backoffice_subjects_path, notice: "Assunto excluído com sucesso."
     else
       render :index, notice: 'Algo deu errado.'
     end
