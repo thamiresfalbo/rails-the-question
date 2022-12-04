@@ -30,7 +30,6 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
   end
 
   private
-
   def verify_password
     return unless params[:admin][:password].blank? && params[:admin][:password_confirmation].blank?
 
@@ -44,4 +43,5 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
   def admin_params
     params.require(:admin).permit(:email, :password, :password_confirmation)
   end
+  
 end
