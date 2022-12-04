@@ -37,7 +37,7 @@ namespace :dev do
 
   desc 'Adiciona mais admistradores'
   task add_more_admins: :environment do
-    5.times do
+    10.times do
       Admin.create!(
         email: Faker::Internet.email,
         password: DEFAULT_PASSWORD,
