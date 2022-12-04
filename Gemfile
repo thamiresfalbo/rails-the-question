@@ -16,7 +16,7 @@ gem 'kaminari-i18n'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.8', '>= 5.2.8.1'
 gem 'rails-i18n', '~> 5.1'
-gem 'rubocop'
+gem 'ruby-lsp', '~> 0.3.6', group: :development
 gem 'sass-rails', '~> 5.0'
 gem 'solargraph'
 gem 'sqlite3'
