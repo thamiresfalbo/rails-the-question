@@ -16,15 +16,14 @@ $(document).ready(function() {
 #notice {
     z-index:1;
     position:fixed;
-    top:0;
-    left:0;
+    bottom:0;
 }
 </style>
 
 <% if flash.any? %>
     <div id="notice" class="toast toast-success">
     <% flash.each do |type, message| %>
-        <p class="text-center"><%= message %></p>
+        <p class="text-left"><%= message %></p>
     <% end %>
     </div>
 <% end %>

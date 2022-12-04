@@ -19,7 +19,7 @@
           <%= link_to edit_admins_backoffice_admin_path(admin), class: "btn btn-primary  s-circle" do %>
             <i class="icon icon-edit"></i>
           <% end %>
-          <%= link_to root_path, class: "btn btn-error disabled s-circle" do %>
+          <%= link_to admins_backoffice_admin_path(admin), method: :delete, class: "btn btn-error s-circle", data: { confirm: 'Você tem certeza?' } do %>
             <i class="icon icon-delete"></i>
           <% end %>
         </td>

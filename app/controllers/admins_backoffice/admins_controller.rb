@@ -1,6 +1,6 @@
 class AdminsBackoffice::AdminsController < AdminsBackofficeController
   before_action :verify_password, only: [:update]
-  before_action :set_admin, only: %i[edit update]
+  before_action :set_admin, only: %i[edit update destroy]
 
   def index
     @admins = Admin.all
@@ -29,7 +29,17 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
     end
   end
 
+  def destroy
+    if @admin.destroy
+      redirect_to admins_backoffice_admins_index_path, notice: "Administrador excluído com sucesso."
+    else
+      render :index, notice: 'Algo deu errado.'
+    end
+  end
+  
+
   private
+
   def verify_password
     return unless params[:admin][:password].blank? && params[:admin][:password_confirmation].blank?
 
@@ -43,5 +53,4 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
   def admin_params
     params.require(:admin).permit(:email, :password, :password_confirmation)
   end
-  
 end
