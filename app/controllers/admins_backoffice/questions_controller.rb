@@ -1,5 +1,6 @@
 class AdminsBackoffice::QuestionsController < AdminsBackofficeController
   before_action :set_question, only: %i[edit update destroy]
+  before_action :get_subjects, only: %i[new edit]
 
   def index
     @questions = Question.all.order(:description).page(params[:page])
@@ -30,7 +31,7 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
 
   def destroy
     if @question.destroy
-      redirect_to admins_backoffice_questions_path, notice: "Pergunta excluído com sucesso."
+      redirect_to admins_backoffice_questions_path, notice: 'Pergunta excluído com sucesso.'
     else
       render :index, notice: 'Algo deu errado.'
     end
@@ -42,8 +43,11 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
     @question = Question.find(params[:id])
   end
 
+  def get_subjects
+    @subjects = Subject.all
+  end
+
   def question_params
     params.require(:question).permit(:description)
   end
 end
-
