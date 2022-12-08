@@ -10,10 +10,12 @@
         <li class="nav-item">Administradores</li>
       <% end %>
       <%= link_to admins_backoffice_subjects_path do %>
-        <li class="nav-item disabled">Assuntos</li>
+        <li class="nav-item">Assuntos</li>
       <% end %>
       <li class="nav-item disabled">Usuários</li>
-      <li class="nav-item disabled">Questões</li>
+      <%= link_to admins_backoffice_questions_path do %>
+        <li class="nav-item">Questões</li>
+      <% end %>
 
     </ul>
   </div>

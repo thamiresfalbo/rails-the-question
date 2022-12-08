@@ -1,0 +1,19 @@
+<h1 class="center"><%= "#{action_message} Questão" %></h1>
+
+<% if @question.errors.any? %>
+  <div class="toast toast-error">
+  <% @question.errors.full_messages.each do |message| %>
+    <p><%= message %></p>
+  <% end %>
+  </div>
+<% end %>
+
+<div class="col-4">
+  <%= form_with model: [:admins_backoffice, @question], local:true  do |f| %>
+    <div class="form-group">
+      <%= f.label :description, class: "form-label" %>
+      <%= f.text_area :description, class: "form-input", rows:"5" %><br>
+    </div>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
+</div>
