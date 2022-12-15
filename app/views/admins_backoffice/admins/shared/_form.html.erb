@@ -1,4 +1,4 @@
-<h1 class="center"><%= "#{action_message} Administrador" %></h1>
+<h1 class="center"><%= "#{action_message} #{@admin.model_name.human}" %></h1>
 
 <% if @admin.errors.any? %>
   <div class="toast toast-error">

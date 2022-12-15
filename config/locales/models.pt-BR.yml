@@ -1,4 +1,4 @@
-pt-BR:
+"pt-BR":
   activerecord:
     models:
       admin:
@@ -6,7 +6,13 @@ pt-BR:
         other: "Administradores"
       user:
         one: "Usuário"
-        others: "Usuário"
+        other: "Usuário"
+      subject:
+        one: "Assunto"
+        other: "Assuntos"
+      question:
+        one: "Questão"
+        other: "Questões"
     attributes:
       admin:
         id: "Código ID"
@@ -24,4 +30,15 @@ pt-BR:
         password: "Senha"
         confirm_password: "Confirmação de Senha"
         password_confirmation: "Confirmar Senha"
-
+      subject:
+        id: "Código ID"
+        description: "Descrição"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+      question:
+        id: "Código ID"
+        description: "Descrição"
+        subject: "Assunto"
+        subject_id: "Assunto"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"

@@ -1,4 +1,4 @@
-<h1 class="center"><%= "#{action_message} Assunto" %></h1>
+<h1 class="center"><%= "#{action_message} #{@subject.model_name.human}" %></h1>
 
 <% if @subject.errors.any? %>
   <div class="toast toast-error">
