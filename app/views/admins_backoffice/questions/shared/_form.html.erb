@@ -18,6 +18,6 @@
       <%= f.label :subject_id %>
       <%= f.collection_select(:subject_id, @subjects, :id, :description, {}, {class:"form-select"}) %>
     </div>
-    <%= f.submit "Confirmar", class: "btn btn-primary" %>
+    <%= f.submit t('buttons.confirm'), class: "btn btn-primary" %>
   <% end %>
 </div>
