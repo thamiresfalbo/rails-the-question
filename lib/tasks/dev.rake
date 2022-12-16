@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-namespace :dev do
-  DEFAULT_PASSWORD = '123456'
-  DEFAULT_FILES_PATH = File.join(Rails.root, 'lib', 'tmp')
+DEFAULT_PASSWORD = '123456'
+DEFAULT_FILES_PATH = File.join(Rails.root, 'lib', 'tmp')
 
+namespace :dev do
   desc 'Configura o ambiente.'
   task setup: :environment do
     if Rails.env.development?
@@ -63,18 +63,42 @@ namespace :dev do
   task add_questions_and_answers: :environment do
     Subject.all.each do |subject|
       rand(1..5).times do |_i|
-        Question.create!(
-          description: "#{Faker::Lorem.paragraph} #{Faker::Lorem.question}",
-          subject: subject
-        )
+        params = create_question_params(subject)
+        answer_array = params[:question][:answers_attributes]
+        add_answers(answer_array)
+        elect_true_answer(answer_array)
+        Question.create!(params)
       end
     end
   end
 
   private
 
+  def create_question_params(subject)
+    { question: {
+      description: "#{Faker::Lorem.paragraph} #{Faker::Lorem.question}",
+      subject: subject,
+      answers_attributes: []
+    } }
+  end
+
+  def create_answer_params(correct: false)
+    { description: Faker::Lorem.sentence, correct: correct }
+  end
+
+  def add_answers(answer_array = [])
+    5.times do
+      answer_array.push(create_answer_params)
+    end
+  end
+
+  def elect_true_answer(answer_array = [])
+    answer_array[rand(answer_array.size)] = create_answer_params(correct: true)
+  end
+
   def show_spinner(msg_start, msg_end = 'Feito!')
     spinner = TTY::Spinner.new(":spinner #{msg_start}", format: :dots)
+
     spinner.auto_spin
     yield
     spinner.success(msg_end.to_s)
