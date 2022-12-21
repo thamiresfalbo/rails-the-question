@@ -67,7 +67,7 @@ namespace :dev do
         answer_array = params[:question][:answers_attributes]
         add_answers(answer_array)
         elect_true_answer(answer_array)
-        Question.create!(params)
+        Question.create!(params[:question])
       end
     end
   end
@@ -87,7 +87,7 @@ namespace :dev do
   end
 
   def add_answers(answer_array = [])
-    5.times do
+    5.times do |j|
       answer_array.push(create_answer_params)
     end
   end
