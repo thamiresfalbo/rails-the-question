@@ -1,9 +1,7 @@
-<header class="navbar bg-gray py-2 mb-2">
+<header class="navbar bg-gray py-2 mb-2 mx-2">
   <section class="navbar-section">
   <%= link_to 'The Question', root_path, class: "navbar-brand" %>
-  </section>
-  <section class="navbar-section">
-    <% if user_signed_in? %>
+  <% if user_signed_in? %>
       <%= link_to 'Painel', users_backoffice_welcome_index_path, class: "btn btn-link" %>
       <%= link_to 'Sair',  destroy_user_session_path, class: "btn btn-link", method: :delete %>
     <% elsif admin_signed_in? %>
@@ -13,5 +11,12 @@
       <%= link_to 'Entrar', new_user_session_path, class: "btn btn-link" %>
       <%= link_to 'Administrador',  new_admin_session_path, class: "btn btn-link" %>
     <% end %>
+  </section>
+
+  <section class="navbar-section">
+  <%= form_with url: site_search_path, local:true, method: :get, class: "input-group input-inline"  do |f| %>
+    <%= f.text_field :term, class: "form-input", placeholder: "..." %>
+    <%= f.submit t('buttons.search'), class: "btn btn-primary input-group-btn" %>
+  <% end %>
   </section>
 </header>
