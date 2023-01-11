@@ -1,7 +1,6 @@
-<div class="nested-fields">
-    <%= f.label :description, class:"form-label form-inline" %><br>
-    <%= f.text_field :description, class: "form-field form-inline" %>
-    <%= f.check_box :correct, class: "form-checkbox form-inline" %> Correta?
-
-    <%= link_to_remove_association('Remover', f) %>
+<div class="form is-grouped is-horizontal my-2">
+    <%= f.label :description, class:"form-label" %><br>
+    <%= f.text_field :description, class: "input" %>
+    <%= f.check_box :correct, class: "form-checkbox" %> Correta?
+    <%= link_to_remove_association(t('buttons.remove'), f) %>
 </div>

@@ -1,9 +1,8 @@
 <% @questions.each do |question| %>
-<div class="card">
-    <div class="card-header">
-        <h3><%= question.description %></h3>
-    </div>
-    <div class="card-body">
+<div class="message is-dark">
+    <div class="message-body">
+        <span class="tag is-info is-rounded"><%= question.subject.description %></span>    
+        <p class="has-text-weight-bold"><%= question.description %></p>
         <ul>
         <% question.answers.each do |answer| %>
             <li><%= answer.description %></li>

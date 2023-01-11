@@ -10,16 +10,16 @@
 
 <div>
   <%= form_with model: [:admins_backoffice, @question], local:true  do |f| %>
-    <div class="form-group">
-      <%= f.label :description, class: "form-label" %>
-      <%= f.text_area :description, class: "form-input", rows:"5" %><br>
+    <div class="field">
+      <%= f.label :description, class: "field-label" %>
+      <%= f.text_area :description, class: "input", rows:"5" %><br>
     </div>
-    <div class="form-group">
+    <div class="field">
       <%= f.label :subject_id %>
-      <%= f.collection_select(:subject_id, @subjects, :id, :description, {}, {class:"form-select"}) %>
+      <%= f.collection_select(:subject_id, @subjects, :id, :description, {}, {class:"select"}) %>
     </div>
 
-    <div id="answers" class="form-group">
+    <div id="answers" class="field">
       <%= f.fields_for :answers do |answer| %>
         <%= render partial: 'answer_fields', locals: { f: answer } %>
       <% end %>
