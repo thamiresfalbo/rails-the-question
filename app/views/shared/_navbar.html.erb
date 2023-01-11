@@ -1,22 +1,36 @@
-<header class="navbar bg-gray py-2 mb-2 mx-2">
-  <section class="navbar-section">
-  <%= link_to 'The Question', root_path, class: "navbar-brand" %>
-  <% if user_signed_in? %>
-      <%= link_to 'Painel', users_backoffice_welcome_index_path, class: "btn btn-link" %>
-      <%= link_to 'Sair',  destroy_user_session_path, class: "btn btn-link", method: :delete %>
-    <% elsif admin_signed_in? %>
-      <%= link_to 'Painel', admins_backoffice_welcome_index_path, class: "btn btn-link" %>
-      <%= link_to 'Sair',  destroy_admin_session_path, class: "btn btn-link", method: :delete %>
-    <% else %>
-      <%= link_to 'Entrar', new_user_session_path, class: "btn btn-link" %>
-      <%= link_to 'Administrador',  new_admin_session_path, class: "btn btn-link" %>
-    <% end %>
-  </section>
+<nav class="navbar is-transparent">
+  <div class="navbar-brand">
+    <%= link_to 'The Question', root_path, class: "navbar-brand" %>
+  </div>
 
-  <section class="navbar-section">
-  <%= search_form_for @q, url: site_search_path, class: "input-group input-inline"  do |f| %>
-    <%= f.search_field :description_cont, class: "form-input", placeholder: "..." %>
-    <%= f.submit t('buttons.search'), class: "btn btn-primary input-group-btn" %>
-  <% end %>
-  </section>
-</header>
+  <div class="navbar-item">
+    <%= search_form_for @q, url: site_search_path, class: "field is-grouped is-horizontal"  do |f| %>
+      <p class="control is-horizontal has-icons-left">
+        <%= f.search_field :description_cont, class: "input is-rounded", placeholder: "..." %>
+        <span class="icon is-medium is-left">
+            <i class="mdi mdi-magnify"></i>
+        </span>
+      </p>
+        <%= f.submit t('buttons.search'), class: "control button is-primary" %>
+      <% end %>
+  </div>
+
+
+  <div class="navbar-end">
+  <div class="navbar-item">
+  <div class="buttons">
+  <% if user_signed_in? %>
+      <%= link_to 'Painel', users_backoffice_welcome_index_path, class: "button is-primary" %>
+      <%= link_to 'Sair',  destroy_user_session_path, class: "button is-light", method: :delete %>
+    <% elsif admin_signed_in? %>
+      <%= link_to 'Painel', admins_backoffice_welcome_index_path, class: "button is-primary" %>
+      <%= link_to 'Sair',  destroy_admin_session_path, class: "button is-light", method: :delete %>
+    <% else %>
+      <%= link_to 'Entrar', new_user_session_path, class: "button is-primary" %>
+      <%= link_to 'Administrador',  new_admin_session_path, class: "button is-primary" %>
+    <% end %>
+  </div>
+  </div>
+  </div>
+
+</nav>

@@ -2,8 +2,10 @@
   "name": "rails-the-question",
   "private": true,
   "dependencies": {
-    "jquery": "^3.6.1",
-    "spectre.css": "^0.5.9",
+    "@mdi/font": "^7.1.96",
+    "@mdi/js": "^7.1.96",
+    "bulma": "^0.9.4",
+    "jquery": "^3.6.1"
   },
   "version": "1.0.0",
   "main": "index.js",

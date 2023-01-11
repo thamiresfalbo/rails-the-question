@@ -1,16 +1,16 @@
 <!-- TODO: Refatorar esse código, ou usar alguma lib js -->
-<script>
+<%# <script>
 setTimeout(() => {
     $('#notice').delay(1000).fadeOut(300);
 }, 5000);
 
 $(document).ready(function() {
-    $('#notice').prepend("<button id='close' class='btn btn-clear float-right'></button>")
+    $('#notice').prepend("<button id='close' class='button button-clear float-right'></button>")
     $('#close').on('click', function(e) {
         $('#notice').remove();
     });
 });
-</script>
+</script> %>
 
 <style>
 #notice {
@@ -21,9 +21,9 @@ $(document).ready(function() {
 </style>
 
 <% if flash.any? %>
-    <div id="notice" class="toast toast-success">
     <% flash.each do |type, message| %>
-        <p class="text-left"><%= message %></p>
+        <div id="notice" class="notification <%= "is-#{type}" %>">
+            <p class="text-left"><%= message %></p>
+        </div>
     <% end %>
-    </div>
 <% end %>

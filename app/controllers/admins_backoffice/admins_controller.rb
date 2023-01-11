@@ -13,9 +13,11 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
   def create
     @admin = Admin.new(admin_params)
     if @admin.save
-      redirect_to admins_backoffice_admins_index_path, notice: 'Administrador foi criado com sucesso.'
+      redirect_to admins_backoffice_admins_index_path
+      flash[:success] = 'Administrador foi criado com sucesso.'
     else
-      render :new, notice: 'Algo deu errado.'
+      render :new
+      flash[:warning] = 'Algo deu errado.'
     end
   end
 
@@ -23,20 +25,23 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
 
   def update
     if @admin.update(admin_params)
-      redirect_to admins_backoffice_admins_index_path, notice: 'Administrador foi atualizado com sucesso.'
+      redirect_to admins_backoffice_admins_index_path
+      flash[:success] = 'Administrador foi atualizado com sucesso.'
     else
-      render :edit, notice: 'Algo deu errado.'
+      render :edit
+      flash[:warning] = 'Algo deu errado.'
     end
   end
 
   def destroy
     if @admin.destroy
-      redirect_to admins_backoffice_admins_index_path, notice: "Administrador excluído com sucesso."
+      redirect_to admins_backoffice_admins_index_path
+      flash[:success] = 'Administrador excluído com sucesso.'
     else
-      render :index, notice: 'Algo deu errado.'
+      render :index
+      flash[:warning] = 'Algo deu errado.'
     end
   end
-  
 
   private
 

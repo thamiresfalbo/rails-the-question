@@ -5,7 +5,7 @@
     <th>#</th>
     <th><%= translate_attribute(@questions, :description) %></th>
     <th><%= translate_attribute(@questions, :subject) %></th>
-    <th><%= link_to new_admins_backoffice_question_path, class: "btn btn-success s-circle" do %>
+    <th><%= link_to new_admins_backoffice_question_path, class: "button button-success s-circle" do %>
         <i class="icon icon-plus"></i>
       <% end %>
     </th>
@@ -18,11 +18,11 @@
       <td><%= question.description.truncate(50) %></td>
       <td><%= question.subject.description.truncate(50) %></td>
       <td style="width: 100px">
-        <%= link_to edit_admins_backoffice_question_path(question), class: "btn btn-primary s-circle" do %>
+        <%= link_to edit_admins_backoffice_question_path(question), class: "button is-primary s-circle" do %>
           <i class="icon icon-edit"></i>
         <% end %>
         <%= link_to admins_backoffice_question_path(question),
-                    method: :delete, class: "btn btn-error s-circle",
+                    method: :delete, class: "button button-error s-circle",
                     data: { confirm: t('messages.confirm') } do %>
           <i class="icon icon-delete"></i>
         <% end %>
@@ -31,4 +31,4 @@
   </tr>
   </tbody>
 </table>
-<%= paginate @questions, theme: 'spectre' %>
+<%= paginate @questions, theme: 'bulma' %>

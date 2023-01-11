@@ -1,10 +1,15 @@
 <h1 class="center"><%= "#{action_message} #{@admin.model_name.human}" %></h1>
 
 <% if @admin.errors.any? %>
-  <div class="toast toast-error">
-  <% @admin.errors.full_messages.each do |message| %>
-    <p><%= message %></p>
-  <% end %>
+  <div class="message is-warning">
+    <div class="message-header">
+      <p>Erro!</p>
+    </div>
+    <div class="message-body">
+    <% @admin.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+    </div>
   </div>
 <% end %>
 
@@ -22,6 +27,6 @@
       <%= f.label :password_confirmation, class: "form-label" %>
       <%= f.password_field :password_confirmation, class: "form-input" %><br>
     </div>
-    <%= f.submit t('buttons.confirm'), class: "btn btn-primary" %>
+    <%= f.submit t('buttons.confirm'), class: "button is-primary" %>
   <% end %>
 </div>

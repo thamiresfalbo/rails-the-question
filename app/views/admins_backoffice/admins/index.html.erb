@@ -4,7 +4,7 @@
     <tr>
       <th>#</th>
       <th><%= translate_attribute(@admins, :email) %></th>
-      <th><%= link_to new_admins_backoffice_admin_path , class: "btn btn-success s-circle" do %>
+      <th><%= link_to new_admins_backoffice_admin_path , class: "button button-success s-circle" do %>
           <i class="icon icon-plus"></i>
       <% end %>
       </th>
@@ -16,10 +16,10 @@
         <td><%= admin.id %></td>
         <td><%= admin.email %></td>
         <td style="width: 100px">
-          <%= link_to edit_admins_backoffice_admin_path(admin), class: "btn btn-primary  s-circle" do %>
+          <%= link_to edit_admins_backoffice_admin_path(admin), class: "button is-primary  s-circle" do %>
             <i class="icon icon-edit"></i>
           <% end %>
-          <%= link_to admins_backoffice_admin_path(admin), method: :delete, class: "btn btn-error s-circle", data: { confirm: t('messages.confirm') } do %>
+          <%= link_to admins_backoffice_admin_path(admin), method: :delete, class: "button button-error s-circle", data: { confirm: t('messages.confirm') } do %>
             <i class="icon icon-delete"></i>
           <% end %>
         </td>
@@ -27,4 +27,4 @@
     </tr>
   </tbody>
 </table>
-<%= paginate @admins, theme: 'spectre' %>
+<%= paginate @admins, theme: 'bulma' %>

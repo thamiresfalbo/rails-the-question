@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   layout :layout_by_resource
   before_action :set_search
+  add_flash_types :danger, :success, :warning
 
   protected
 
