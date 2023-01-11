@@ -1,11 +1,11 @@
 <h2>Assuntos</h2>
-<table class="table table-striped table-hover">
+<table class="table is-fullwidth">
   <thead>
   <tr>
     <th>#</th>
     <th><%= translate_attribute(@subjects, :description) %></th>
-    <th><%= link_to new_admins_backoffice_subject_path, class: "button button-success s-circle" do %>
-        <i class="icon icon-plus"></i>
+    <th><%= link_to new_admins_backoffice_subject_path, class: "button is-primary" do %>
+        <i class="mdi mdi-pencil-plus"></i>
       <% end %>
     </th>
   </tr>
@@ -15,14 +15,14 @@
     <tr>
       <td><%= subject.id %></td>
       <td><%= subject.description %></td>
-      <td style="width: 100px">
-        <%= link_to edit_admins_backoffice_subject_path(subject), class: "button is-primary  s-circle" do %>
-          <i class="icon icon-edit"></i>
+      <td style="width: 160px">
+        <%= link_to edit_admins_backoffice_subject_path(subject), class: "button is-info  s-circle" do %>
+          <i class="mdi mdi-pencil"></i>
         <% end %>
         <%= link_to admins_backoffice_subject_path(subject),
-                    method: :delete, class: "button button-error s-circle",
+                    method: :delete, class: "button is-danger",
                     data: { confirm: t('messages.confirm') } do %>
-          <i class="icon icon-delete"></i>
+          <i class="mdi mdi-pencil-remove"></i>
         <% end %>
       </td>
   <% end %>

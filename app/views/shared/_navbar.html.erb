@@ -1,17 +1,17 @@
 <nav class="navbar is-transparent">
   <div class="navbar-brand">
-    <%= link_to 'The Question', root_path, class: "navbar-brand" %>
+    <%= link_to 'The Question', root_path, class: "title navbar-item" %>
   </div>
 
   <div class="navbar-item">
     <%= search_form_for @q, url: site_search_path, class: "field is-grouped is-horizontal"  do |f| %>
       <p class="control is-horizontal has-icons-left">
-        <%= f.search_field :description_cont, class: "input is-rounded", placeholder: "..." %>
+        <%= f.search_field :description_cont, class: "input is-rounded", placeholder: t('buttons.search') %>
         <span class="icon is-medium is-left">
             <i class="mdi mdi-magnify"></i>
         </span>
       </p>
-        <%= f.submit t('buttons.search'), class: "control button is-primary" %>
+        <%# <%= f.submit t('buttons.search'), class: "control button is-primary" %>
       <% end %>
   </div>
 

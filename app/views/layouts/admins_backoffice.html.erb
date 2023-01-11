@@ -1,24 +1,25 @@
 <%= render 'shared/header' %>
-<div class="columns">
-  <div class="column col-3">
-    <ul class="nav">
-      <li class="divider text-center" data-content="PAINEL"></li>
-      <%= link_to admins_backoffice_welcome_index_path do %>
-        <li class="nav-item">Início</li>
-      <% end %>
-      <%= link_to admins_backoffice_admins_path do %>
-        <li class="nav-item">Administradores</li>
-      <% end %>
-      <%= link_to admins_backoffice_subjects_path do %>
-        <li class="nav-item">Assuntos</li>
-      <% end %>
-      <li class="nav-item disabled">Usuários</li>
-      <%= link_to admins_backoffice_questions_path do %>
-        <li class="nav-item">Questões</li>
-      <% end %>
-
-    </ul>
-  </div>
+<div class="columns mx-2">
+  <div class="column is-one-quarter">
+    <div class="menu">
+      <p class="menu-label">PAINEL</p>
+        <ul class="menu-list">
+          <%= link_to admins_backoffice_welcome_index_path do %>
+            <li>Início</li>
+          <% end %>
+          <%= link_to admins_backoffice_admins_path do %>
+            <li>Administradores</li>
+          <% end %>
+          <%= link_to admins_backoffice_subjects_path do %>
+            <li>Assuntos</li>
+          <% end %>
+          <li class="nav-item disabled">Usuários</li>
+          <%= link_to admins_backoffice_questions_path do %>
+            <li>Questões</li>
+          <% end %>
+        </ul>
+      </div>
+      </div>
   <div class="column">
     <%= yield %>
   </div>
