@@ -1,26 +1,44 @@
-<h2>Login</h2>
+<section class="hero is-fullheight">
+  <div class="hero-body">
+    <div class="container  has-text-centered">
+      <div class="login column is-3 is-offset-5">
+        <h3 class="is-size-3">Login</h3>
+        
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-group">
-    <%= f.label :email %><br>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+          <div class="field">
+            <%= f.label :email, class:"label" %>
+            <div class="control has-icons-left">
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input is-rounded" %>
+              <span class="icon is-small is-left">
+                <i class="mdi mdi-account"></i>
+              </span>
+            </div>
+          </div>
 
-  <div class="form-group">
-    <%= f.label :password %><br>
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+          <div class="field">
+                <%= f.label :password, class:"label" %>
+                <div class="control has-icons-left">
+                <%= f.password_field :password, autocomplete: "current-password", class: "input is-rounded" %>
+                <span class="icon is-small is-left">
+                <i class="mdi mdi-lock"></i>
+              </span>
+            </div>
+          </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="form-group">
-      <%= f.check_box :remember_me, class:"form-checkbox form-inline" %>
-      <%= f.label :remember_me, class:"form-inline" %>
+          <% if devise_mapping.rememberable? %>
+            <label class="checkbox">
+              <%= f.check_box :remember_me, class:"checkbox" %> <%= f.label :remember_me, class:"form-inline" %>
+            </label>
+          <% end %>
+
+            <div class="actions">
+              <%= f.submit "Login", class: "button is-primary" %>
+            </div>
+        <% end %>
+
+        <%= render "admins/shared/links" %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in", class: "button is-primary" %>
   </div>
-<% end %>
-
-<%= render "admins/shared/links" %>
+</section>

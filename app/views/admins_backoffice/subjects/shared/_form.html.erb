@@ -1,18 +1,23 @@
-<h1 class="center"><%= "#{action_message} #{@subject.model_name.human}" %></h1>
+<h3 class="is-size-3"><%= "#{action_message} #{@subject.model_name.human}" %></h3>
 
 <% if @subject.errors.any? %>
-  <div class="toast toast-error">
-  <% @subject.errors.full_messages.each do |message| %>
-    <p><%= message %></p>
-  <% end %>
+  <div class="message is-warning">
+    <div class="message-header">
+      <p>Erro!</p>
+    </div>
+    <div class="message-body">
+    <% @subject.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+    </div>
   </div>
 <% end %>
 
-<div class="col-4">
+<div class="control">
   <%= form_with model: [:admins_backoffice, @subject], local:true  do |f| %>
-    <div class="form-group">
-      <%= f.label :description, class: "form-label" %>
-      <%= f.text_field :description, class: "form-input" %><br>
+    <div class="field">
+      <%= f.label :description, class: "label" %>
+      <%= f.text_field :description, class: "input" %><br>
     </div>
     <%= f.submit t('buttons.confirm'), class: "button is-primary" %>
   <% end %>

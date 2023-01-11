@@ -1,29 +1,37 @@
-<h1 class="center"><%= "#{action_message} #{@question.model_name.human}" %></h1>
+<h3 class="is-size-3"><%= "#{action_message} #{@question.model_name.human}" %></h3>
 
 <% if @question.errors.any? %>
-  <div class="toast toast-error">
-  <% @question.errors.full_messages.each do |message| %>
-    <p><%= message %></p>
-  <% end %>
+  <div class="message is-warning">
+    <div class="message-header">
+      <p>Erro!</p>
+    </div>
+    <div class="message-body">
+    <% @question.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+    </div>
   </div>
 <% end %>
 
-<div>
+<div class="control">
   <%= form_with model: [:admins_backoffice, @question], local:true  do |f| %>
     <div class="field">
-      <%= f.label :description, class: "field-label" %>
-      <%= f.text_area :description, class: "input", rows:"5" %><br>
+      <%= f.label :description, class: "label" %>
+      <%= f.text_area :description, class: "textarea", rows:"5" %><br>
     </div>
+
     <div class="field">
-      <%= f.label :subject_id %>
-      <%= f.collection_select(:subject_id, @subjects, :id, :description, {}, {class:"select"}) %>
+      <%= f.label :subject_id, class:"label" %>
+        <div class="select">
+          <%= f.collection_select(:subject_id, @subjects, :id, :description, {}, {class:""}) %>
+        </div>
     </div>
 
     <div id="answers" class="field">
       <%= f.fields_for :answers do |answer| %>
         <%= render partial: 'answer_fields', locals: { f: answer } %>
       <% end %>
-      <%= link_to_add_association '[Adicionar Resposta]', f, :answers %>
+      <%= link_to_add_association 'Adicionar Resposta', f, :answers %>
     </div>
 
     <%= f.submit t('buttons.confirm'), class: "button is-primary" %>
